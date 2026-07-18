@@ -12,6 +12,7 @@ app.use(express.json());   // JSON data read karne ke liye (axios ke liye zaroor
 app.use(cors({
     origin: [
         "http://127.0.0.1:5500",
+        "http://127.0.0.1:5500/Mongodb/VIA_NODEJS_MONGODB/index.html",
         "http://localhost:5500"
     ]
 }));
@@ -20,7 +21,9 @@ console.log("CORS Loaded");
 app.options(/.*/, cors());
 // ================== MongoDB Connect ==================
 // Apni Atlas connection string yaha daalo
-
+// mongoose.connect("mongodb+srv://USER_DATABASE_syED:NyRvELuIzA36do1U@cluster0.z3w8chw.mongodb.net/?appName=Cluster0")
+//   .then(() => console.log("MongoDB connected!"))
+//   .catch(err => console.log("Connection error:", err));
 
 
 // if call via url key and Value (online site ka lea key value)
