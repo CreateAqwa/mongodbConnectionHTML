@@ -10,10 +10,18 @@ app.use(cors());           // taaki HTML file se request block na ho
 
 // ================== MongoDB Connect ==================
 // Apni Atlas connection string yaha daalo
-mongoose.connect("mongodb+srv://USER_DATABASE_syED:NyRvELuIzA36do1U@cluster0.z3w8chw.mongodb.net/?appName=Cluster0")
+// mongoose.connect("mongodb+srv://USER_DATABASE_syED:NyRvELuIzA36do1U@cluster0.z3w8chw.mongodb.net/?appName=Cluster0")
+//   .then(() => console.log("MongoDB connected!"))
+//   .catch(err => console.log("Connection error:", err));
+
+
+// if call via url key and Value
+
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected!"))
   .catch(err => console.log("Connection error:", err));
 
+  
 // ================== Schema & Model ==================
 const notesSchema = new mongoose.Schema({
   title: String,
