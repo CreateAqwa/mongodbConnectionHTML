@@ -17,6 +17,7 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type"]
 }));
+app.options(/.*/, cors());
 // ================== MongoDB Connect ==================
 // Apni Atlas connection string yaha daalo
 // mongoose.connect("mongodb+srv://USER_DATABASE_syED:NyRvELuIzA36do1U@cluster0.z3w8chw.mongodb.net/?appName=Cluster0")
