@@ -90,6 +90,12 @@ app.delete("/notes/:id", (req, res) => {
 
 // ================== Server Start ==================
 
+
+// Extra  // {"status":"OK"} // to server sahi chal raha hai.
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "OK" });
+});
+
 const PORT = process.env.PORT || 3009;
 
 app.listen(PORT, () => {
