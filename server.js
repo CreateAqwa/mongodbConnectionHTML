@@ -11,7 +11,7 @@ app.use(express.json());   // JSON data read karne ke liye (axios ke liye zaroor
 
 app.use(cors({
     origin: [
-        "http://127.0.0.1:5500",
+        "http://127.0.0.1:5500/",
         "http://127.0.0.1:5500/Mongodb/VIA_NODEJS_MONGODB/index.html",
         "localhost:5500",
         "127.0.0.1:5500"
