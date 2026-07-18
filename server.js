@@ -45,7 +45,7 @@ app.post("/notes", (req, res) => {
 
   newNote.save()
     .then((saved) => {
-      console.log(res,'POST RES')
+      console.log(res,'POST')
       return res.json(saved) 
     })
     .catch(err => res.status(500).json({ error: err.message }));
@@ -70,6 +70,13 @@ app.delete("/notes/:id", (req, res) => {
 });
 
 // ================== Server Start ==================
-app.listen(3009, () => {
-  console.log("Server is running on http://localhost:3009/");
+
+const PORT = process.env.PORT || 3009;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
+// app.listen(3009, () => {
+//   console.log("Server is running on http://localhost:3009/");
+// });
