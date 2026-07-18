@@ -116,7 +116,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+// require('dotenv').config();
+require('dotenv').config();
 const app = express();
 
 // ================== Debug ==================
@@ -128,7 +129,7 @@ app.use((req, res, next) => {
 // ================== CORS ==================
 app.use(cors({
     origin: [
-        "http://127.0.0.1:5500",
+        "http://127.0.0.1:5500/",
         "http://localhost:5500"
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
