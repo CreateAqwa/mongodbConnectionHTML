@@ -13,10 +13,10 @@ app.use(cors({
     origin: [
         "http://127.0.0.1:5500",
         "http://localhost:5500"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type"]
+    ]
 }));
+
+console.log("CORS Loaded");
 app.options(/.*/, cors());
 // ================== MongoDB Connect ==================
 // Apni Atlas connection string yaha daalo
@@ -63,7 +63,7 @@ app.post("/notes", (req, res) => {
 
   newNote.save()
     .then((saved) => {
-      console.log(res,'POST')
+      console.log(saved,'POST')
       return res.json(saved) 
     })
     .catch(err => res.status(500).json({ error: err.message }));
